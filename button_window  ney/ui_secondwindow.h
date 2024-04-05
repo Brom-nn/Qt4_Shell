@@ -12,10 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QFormLayout>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,67 +24,93 @@ QT_BEGIN_NAMESPACE
 class Ui_SecondWindow
 {
 public:
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
-    QGridLayout *gridLayout_6;
-    QGridLayout *gridLayout_4;
-    QGridLayout *gridLayout_2;
-    QGroupBox *groupBox;
-    QGridLayout *gridLayout_3;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QFormLayout *formLayout;
+    QLabel *label_3;
+    QLabel *label_14;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout_2;
+    QTextEdit *textEdit_4;
+    QTextEdit *textEdit_5;
+    QTextEdit *textEdit_15;
 
     void setupUi(QDialog *SecondWindow)
     {
         if (SecondWindow->objectName().isEmpty())
             SecondWindow->setObjectName(QString::fromUtf8("SecondWindow"));
-        SecondWindow->resize(884, 635);
-        SecondWindow->setLayoutDirection(Qt::LeftToRight);
-        gridLayoutWidget = new QWidget(SecondWindow);
-        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(300, 150, 371, 231));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        gridLayout_6 = new QGridLayout();
-        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
-
-        gridLayout->addLayout(gridLayout_6, 2, 0, 1, 1);
-
-        gridLayout_4 = new QGridLayout();
-        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-
-        gridLayout->addLayout(gridLayout_4, 1, 1, 1, 1);
-
-        gridLayout_2 = new QGridLayout();
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-
-        gridLayout->addLayout(gridLayout_2, 0, 1, 1, 1);
-
-        groupBox = new QGroupBox(gridLayoutWidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-
-        gridLayout->addWidget(groupBox, 0, 0, 1, 1);
-
-        gridLayout_3 = new QGridLayout();
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        label_2 = new QLabel(gridLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        SecondWindow->resize(767, 540);
         QFont font;
         font.setPointSize(14);
-        label_2->setFont(font);
-        label_2->setLayoutDirection(Qt::LeftToRight);
-        label_2->setAutoFillBackground(true);
+        font.setBold(false);
+        font.setWeight(50);
+        SecondWindow->setFont(font);
+        SecondWindow->setLayoutDirection(Qt::LeftToRight);
+        SecondWindow->setInputMethodHints(Qt::ImhNone);
+        horizontalLayoutWidget = new QWidget(SecondWindow);
+        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(10, 10, 381, 151));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setSizeConstraint(QLayout::SetMinimumSize);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(10);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetMinimumSize);
+        verticalLayout->setContentsMargins(10, 10, 10, 10);
+        label_2 = new QLabel(horizontalLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        gridLayout_3->addWidget(label_2, 0, 0, 1, 1);
+        verticalLayout->addWidget(label_2);
+
+        label_3 = new QLabel(horizontalLayoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        verticalLayout->addWidget(label_3);
+
+        label_14 = new QLabel(horizontalLayoutWidget);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+
+        verticalLayout->addWidget(label_14);
 
 
-        gridLayout->addLayout(gridLayout_3, 1, 0, 1, 1);
+        horizontalLayout->addLayout(verticalLayout);
 
-        formLayout = new QFormLayout();
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        horizontalSpacer = new QSpacerItem(20, 30, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addLayout(formLayout, 3, 0, 1, 1);
+        horizontalLayout->addItem(horizontalSpacer);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setSizeConstraint(QLayout::SetMinAndMaxSize);
+        verticalLayout_2->setContentsMargins(10, 10, 10, 10);
+        textEdit_4 = new QTextEdit(horizontalLayoutWidget);
+        textEdit_4->setObjectName(QString::fromUtf8("textEdit_4"));
+
+        verticalLayout_2->addWidget(textEdit_4);
+
+        textEdit_5 = new QTextEdit(horizontalLayoutWidget);
+        textEdit_5->setObjectName(QString::fromUtf8("textEdit_5"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(textEdit_5->sizePolicy().hasHeightForWidth());
+        textEdit_5->setSizePolicy(sizePolicy);
+
+        verticalLayout_2->addWidget(textEdit_5);
+
+        textEdit_15 = new QTextEdit(horizontalLayoutWidget);
+        textEdit_15->setObjectName(QString::fromUtf8("textEdit_15"));
+        sizePolicy.setHeightForWidth(textEdit_15->sizePolicy().hasHeightForWidth());
+        textEdit_15->setSizePolicy(sizePolicy);
+
+        verticalLayout_2->addWidget(textEdit_15);
+
+        verticalLayout_2->setStretch(0, 1);
+
+        horizontalLayout->addLayout(verticalLayout_2);
 
 
         retranslateUi(SecondWindow);
@@ -94,8 +121,9 @@ public:
     void retranslateUi(QDialog *SecondWindow)
     {
         SecondWindow->setWindowTitle(QCoreApplication::translate("SecondWindow", "Dialog", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("SecondWindow", "GroupBox", nullptr));
-        label_2->setText(QCoreApplication::translate("SecondWindow", "      \320\237\321\200\320\276\321\202\320\276\320\272\320\276\320\273 \342\204\226", nullptr));
+        label_2->setText(QCoreApplication::translate("SecondWindow", "\320\235\320\260\320\270\320\274\320\265\320\275\320\276\320\262\320\260\320\275\320\270\320\265 \320\270\320\267\320\264\320\265\320\273\320\270\321\217", nullptr));
+        label_3->setText(QCoreApplication::translate("SecondWindow", "\320\235\320\260\320\270\320\274\320\265\320\275\320\276\320\262\320\260\320\275\320\270\320\265 \320\270\320\267\320\264\320\265\320\273\320\270\321\217", nullptr));
+        label_14->setText(QCoreApplication::translate("SecondWindow", "\320\227\320\260\320\262. \342\204\226 \320\270\320\267\320\264\320\265\320\273\320\270\321\217", nullptr));
     } // retranslateUi
 
 };
