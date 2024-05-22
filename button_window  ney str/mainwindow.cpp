@@ -2,9 +2,9 @@
 #include "ui_mainwindow.h"
 #include "secondwindow.h"
 #include "dialog_window.h"
-#include <QleServer.hpp>
-#include <ComObj.hpp>
-#include <utilcls.h>
+//#include <QleServer.hpp>
+//#include <ComObj.hpp>
+//#include <utilcls.h>
 
 #include <QMessageBox>
 
